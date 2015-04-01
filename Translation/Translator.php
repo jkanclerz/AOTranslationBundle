@@ -141,7 +141,7 @@ class Translator extends BaseTranslator
      * Get messages used in all loaded locales.
      * @return array
      */
-    public function getMessages()
+    public function getMessages($locale = NULL)
     {
         $messages = array();
         foreach ($this->doctrineCatalogues as $locale => $catalogue) {

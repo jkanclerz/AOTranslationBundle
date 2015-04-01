@@ -7,6 +7,8 @@ use AO\TranslationBundle\Translation\Translator;
 use Symfony\Component\EventDispatcher\Event;
 use AO\TranslationBundle\Translation;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Translation\TranslatorInterface;
+
 
 /**
  * @author Adrian Olek <adrianolek@gmail.com>
@@ -20,7 +22,7 @@ class TranslationListener
      */
     private $em;
 
-    public function __construct(Translator $translator, EntityManager $entityManager)
+    public function __construct(TranslatorInterface $translator, EntityManager $entityManager)
     {
         $this->translator = $translator;
         $this->em = $entityManager;
