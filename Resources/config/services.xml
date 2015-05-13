@@ -29,22 +29,8 @@
           <tag name="kernel.event_listener" event="kernel.terminate" method="onTerminate" />
           <tag name="kernel.event_listener" event="console.command" method="onCommand" />
           <tag name="kernel.event_listener" event="console.terminate" method="onTerminate" />
-          <argument type="service" id="translator" />
+          <argument type="service" id="translator.default" />
           <argument type="service" id="ao_translation.entity_manager" />
-      </service>
-
-      <service id="ao_translation.admin.message" class="AO\TranslationBundle\Admin\MessageAdmin">
-        <tag name="sonata.admin" manager_type="orm" group="Translations" label="Message"/>
-        <argument />
-        <argument>AO\TranslationBundle\Entity\Message</argument>
-        <argument />
-        <call method="setContainer">
-          <argument type="service" id="service_container" />
-        </call>
-        <call method="setTemplate">
-          <argument>edit</argument>
-          <argument>AOTranslationBundle:MessageAdmin:edit.html.twig</argument>
-        </call>
       </service>
 
     </services>
