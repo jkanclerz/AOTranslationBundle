@@ -1,6 +1,8 @@
 <?php
 
 namespace AO\TranslationBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,7 +15,7 @@ use AO\TranslationBundle\Form as Form;
  * @author Adrian Olek <adrianolek@gmail.com>
  *
  */
-class ProfilerController extends ContainerAware
+class ProfilerController extends Controller
 {
     /**
      * @Route("/_profiler/{token}/translations")
