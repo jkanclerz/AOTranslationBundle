@@ -11,6 +11,15 @@ class Translator extends BaseTranslator
 
     private $doctrineCatalogues = array();
     private $selector, $bundle, $controller, $action;
+    private $requestStack;
+
+    /**
+     * @param mixed $requestStack
+     */
+    public function setRequestStack($requestStack)
+    {
+        $this->requestStack = $requestStack;
+    }
 
     /**
      * Store bundle, controller & action name
@@ -23,9 +32,7 @@ class Translator extends BaseTranslator
 
         $this->bundle = $this->controller = $this->action = 'none';
 
-        if ($this->container->isScopeActive('request')) {
-          $request = $this->container->get('request');
-
+        if ($request = $this->requestStack->getMasterRequest()) {
           if ($controller = $request->get('_controller')) {
             preg_match('/(.+)\\\\(.+Bundle)\\\\Controller\\\\(.+)Controller::(.+)Action/', $controller, $matches);
             if ($matches) {
