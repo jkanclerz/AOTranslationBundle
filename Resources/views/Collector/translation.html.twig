@@ -36,6 +36,6 @@
             <em>No translations used.</em>
         </p>
     {% else %}
-        {% render url('ao_translation_profiler_translations', {'token': token}) %}
+        {{ render(url('ao_translation_profiler_translations', {'token': token})) }}
     {% endif %}
 {% endblock %}
