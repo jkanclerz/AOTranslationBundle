@@ -52,6 +52,12 @@ class TranslationDataCollector extends DataCollector
         }
     }
 
+    public function reset()
+    {
+        // TODO: Implement reset() method.
+    }
+
+
     /**
      * {@inheritdoc}
      */
