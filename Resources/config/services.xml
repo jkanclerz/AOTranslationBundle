@@ -12,7 +12,7 @@
     </parameters>
 
     <services>
-      <service id="ao_translation.entity_manager" class="%doctrine.orm.entity_manager.class%">
+      <service id="ao_translation.entity_manager" class="%doctrine.orm.entity_manager.class%" public="true">
                <factory service="doctrine" method="getManager"/>
           <argument>%ao_translation.entity_manager%</argument>
       </service>
